@@ -1,0 +1,10 @@
+C:\Users\nahue\source\repos\TP No1\testeo\obj\Debug\testeo.csprojAssemblyReference.cache
+C:\Users\nahue\source\repos\TP No1\testeo\obj\Debug\testeo.csproj.CoreCompileInputs.cache
+C:\Users\nahue\source\repos\TP No1\testeo\bin\Debug\testeo.exe.config
+C:\Users\nahue\source\repos\TP No1\testeo\bin\Debug\testeo.exe
+C:\Users\nahue\source\repos\TP No1\testeo\bin\Debug\testeo.pdb
+C:\Users\nahue\source\repos\TP No1\testeo\bin\Debug\Entidades.dll
+C:\Users\nahue\source\repos\TP No1\testeo\bin\Debug\Entidades.pdb
+C:\Users\nahue\source\repos\TP No1\testeo\obj\Debug\testeo.csproj.CopyComplete
+C:\Users\nahue\source\repos\TP No1\testeo\obj\Debug\testeo.exe
+C:\Users\nahue\source\repos\TP No1\testeo\obj\Debug\testeo.pdb
