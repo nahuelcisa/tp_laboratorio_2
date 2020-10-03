@@ -17,3 +17,9 @@ C:\Users\nahue\Desktop\TP-02\Entidades\obj\Debug\Entidades.dll
 C:\Users\nahue\Desktop\TP-02\Entidades\obj\Debug\Entidades.pdb
 C:\Users\nahue\Desktop\TP-02\Entidades\bin\Debug\Entidades.dll
 C:\Users\nahue\Desktop\TP-02\Entidades\bin\Debug\Entidades.pdb
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\bin\Debug\Entidades.dll
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\bin\Debug\Entidades.pdb
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.dll
+C:\Users\nahue\Desktop\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.pdb
