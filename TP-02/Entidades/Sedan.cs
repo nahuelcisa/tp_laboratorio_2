@@ -8,6 +8,11 @@ using System.Drawing;
 
 namespace Entidades
 {
+
+    /// <summary>
+    /// Deriva de la clase vehiculo
+    /// </summary>
+
     public class Sedan : Vehiculo
     {
         public enum ETipo { CuatroPuertas, CincoPuertas }
@@ -25,6 +30,14 @@ namespace Entidades
             this.tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Constructor con "tipo" (Cantidad de puertas)en parametros.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
+
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : this(marca, chasis, color)
         {
             this.tipo = tipo;
@@ -37,6 +50,10 @@ namespace Entidades
         {
             get { return ETamanio.Mediano; }
         }
+
+        /// <summary>
+        /// Muestra la informacion del Sedan
+        /// </summary>
 
         public override sealed string Mostrar()
         {

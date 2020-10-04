@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Deriva de la clase vehiculo.
+    /// </summary>
     public class Ciclomotor : Vehiculo
     {
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color)
@@ -20,6 +23,10 @@ namespace Entidades
         {
            get { return ETamanio.Chico; }
         }
+
+        /// <summary>
+        /// Muestra la informacion del ciclomotor
+        /// </summary>
 
         public override string Mostrar()
         {

@@ -19,10 +19,19 @@ namespace Entidades
         }
 
         #region "Constructores"
+
+        /// <summary>
+        /// Por defecto, Crea la lista.
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+
+        /// <summary>
+        /// Crea el taller, en parametros se pasa la cantidad de espacios disponibles en el mismo.
+        /// </summary>
+        /// <param name="espacioDisponible"></param>       
         public Taller(int espacioDisponible):this()
         {
             this.espacioDisponible = espacioDisponible;
@@ -33,7 +42,7 @@ namespace Entidades
         /// <summary>
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve toda la informacion del taller en formato string</returns>
         public override string ToString()
         {
             return Taller.Listar(this, ETipo.Todos);
@@ -48,7 +57,7 @@ namespace Entidades
         /// </summary>
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
-        /// <returns></returns>
+        /// <returns>Retorna un string con los elementos que pasaron por el switch y se agregaron al StringBuilder para ser mostrados.</returns>
         public static string Listar(Taller taller, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
@@ -94,7 +103,7 @@ namespace Entidades
         /// </summary>
         /// <param name="taller">Objeto donde se agregará el elemento</param>
         /// <param name="vehiculo">Objeto a agregar</param>
-        /// <returns></returns>
+        /// <returns>Retorna el objeto taller con el elemento agregado en caso de poder hacerlo</returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
             bool contain = false;
@@ -124,7 +133,7 @@ namespace Entidades
         /// </summary>
         /// <param name="taller">Objeto donde se quitará el elemento</param>
         /// <param name="vehiculo">Objeto a quitar</param>
-        /// <returns></returns>
+        /// <returns>Retorna el objeto taller con el elemento quitado en caso de poder hacerlo</returns>
         public static Taller operator -(Taller taller, Vehiculo vehiculo)
         {
             foreach (Vehiculo v in taller.vehiculos)

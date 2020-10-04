@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Deriva de la clase vehiculo.
+    /// </summary>
     public class Suv : Vehiculo
     {
         public Suv(EMarca marca, string chasis, ConsoleColor color)
@@ -19,6 +22,10 @@ namespace Entidades
         {
             get { return ETamanio.Grande; }
         }
+
+        /// <summary>
+        /// Muestra la informacion del Suv
+        /// </summary>
 
         public override sealed string Mostrar()
         {
