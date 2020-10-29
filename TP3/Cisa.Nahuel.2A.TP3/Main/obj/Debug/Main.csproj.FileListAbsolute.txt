@@ -1,0 +1,16 @@
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Main.exe.config
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Main.exe
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Main.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\obj\Debug\Main.csprojAssemblyReference.cache
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\obj\Debug\Main.exe
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\obj\Debug\Main.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Archivos.dll
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Clases Abstractas.dll
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Clases Instanciables.dll
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Excepciones.dll
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Archivos.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Clases Abstractas.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Clases Instanciables.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\bin\Debug\Excepciones.pdb
+C:\Users\nahue\Desktop\TP3\Cisa.Nahuel.2A.TP3\Main\obj\Debug\Main.csproj.CopyComplete
