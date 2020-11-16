@@ -18,6 +18,20 @@ namespace MiCalculadora
             InitializeComponent();
         }
 
+        private void FormCalculadora_Load(object sender, EventArgs e)
+        {
+            this.Limpiar();
+        }
+
+        private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Seguro de querer salir?", "Salir",
+         MessageBoxButtons.YesNo) == DialogResult.No)
+            {               
+                e.Cancel = true;
+            }
+        }
+
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             this.lblResultado.Text = Numero.BinarioDecimal(this.lblResultado.Text);
@@ -30,6 +44,7 @@ namespace MiCalculadora
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -67,7 +82,6 @@ namespace MiCalculadora
             Numero numeroDos = new Numero(numero2);
             return Calculadora.Operar(numeroUno, numeroDos, operador);
         }
-
-
+      
     }
 }

@@ -114,7 +114,7 @@ namespace Entidades
 
             double aux;
 
-            if (double.TryParse(numero, out aux))
+            if (double.TryParse(numero, out aux) )
             {
                 retorno = DecimalBinario(aux);
             }
