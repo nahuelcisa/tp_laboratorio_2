@@ -29,9 +29,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Producto: Procesador");
+            sb.AppendLine(" Producto: Procesador");
             sb.Append(base.ProductoToString());
-            sb.AppendFormat($"Generacion: {this.Generacion}\n");
+            sb.AppendFormat($" Generacion: {this.Generacion}\n");
 
             return sb.ToString();
         }

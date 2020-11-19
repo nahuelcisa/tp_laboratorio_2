@@ -93,10 +93,10 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat($"Marca: {this.marca}\nPrecio: {this.precio}\nModelo: {this.Modelo}\n");
+            sb.AppendFormat($"Marca: {this.marca}\nPrecio: {this.precio}\n Modelo: {this.Modelo}\n");
 
             
-                sb.AppendFormat($"hay {this.cantidadDeStock} de unidades disponibles.");
+            sb.AppendFormat($" hay {this.cantidadDeStock} de unidades disponibles.");
             
 
             return sb.ToString();

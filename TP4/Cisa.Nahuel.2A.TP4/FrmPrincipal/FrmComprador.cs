@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Entidades;
+using System.IO;
+using System.Threading;
 
 namespace FrmPrincipal
 {
@@ -21,7 +23,7 @@ namespace FrmPrincipal
         private Gabinete gabo;
         private Procesador micro;
         private PlacaDeVideo gpu;
-
+        private Thread t;
         private Carrito<Producto> carro;
         public FrmComprador()
         {
@@ -41,92 +43,157 @@ namespace FrmPrincipal
 
             carro = new Carrito<Producto>(3);
 
+            this.carro.PrecioSuperado += carro_EventoPrecio;
         }
 
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int i = this.dataGridView1.SelectedRows[0].Index;
-           
+
             DataRow fila = this.dt.Rows[i];
 
             string producto = fila["producto"].ToString();
-            
-            switch (producto)
+
+            try {
+                if ((int)fila["cantidad_de_stock"] > 0)
+                {
+                    switch (producto)
+                    {
+                        case "Gabinete":
+
+                            FrmGabinete frmgabo = new FrmGabinete();
+
+                            frmgabo.StartPosition = FormStartPosition.CenterScreen;
+
+                            if (frmgabo.ShowDialog() == DialogResult.OK)
+                            {
+
+                                gabo = new Gabinete("Gabinete", fila["marca"].ToString(), fila["modelo"].ToString(), (float)fila["precio"], (int)fila["cantidad_de_stock"] - 1, frmgabo.GabineteDelForm);
+
+                                try
+                                {
+                                    carro += gabo;
+                                    this.listBox1.Items.Add(gabo.ToString());
+                                    int stock = int.Parse(fila["cantidad_de_stock"].ToString());
+                                    stock--;
+                                    fila["cantidad_de_stock"] = stock;
+
+                                }
+                                catch (CarritoLlenoException ex)
+                                {
+                                    MessageBox.Show(ex.InformarCarritoLleno());
+                                }
+
+                            }
+                            break;
+
+                        case "PlacaDeVideo":
+
+                            FrmPlacaDeVideo frmgpu = new FrmPlacaDeVideo();
+
+                            frmgpu.StartPosition = FormStartPosition.CenterScreen;
+
+                            if (frmgpu.ShowDialog() == DialogResult.OK)
+                            {
+                                gpu = new PlacaDeVideo("Placa de video", fila["marca"].ToString(), fila["modelo"].ToString(), (float)fila["precio"], (int)fila["cantidad_de_stock"] - 1, frmgpu.GpuDelForm);
+
+                                try
+                                {
+                                    carro += gpu;
+                                    this.listBox1.Items.Add(gpu.ToString());
+                                    int stock = int.Parse(fila["cantidad_de_stock"].ToString());
+                                    stock--;
+                                    fila["cantidad_de_stock"] = stock;
+                                }
+                                catch (CarritoLlenoException ex)
+                                {
+                                    MessageBox.Show(ex.InformarCarritoLleno());
+                                }
+                            }
+                            break;
+
+                        case "Procesador":
+
+                            FrmProcesador frmcpu = new FrmProcesador();
+
+                            frmcpu.StartPosition = FormStartPosition.CenterScreen;
+
+                            if (frmcpu.ShowDialog() == DialogResult.OK)
+                            {
+                                micro = new Procesador("Procesador", fila["marca"].ToString(), fila["modelo"].ToString(), (float)fila["precio"], (int)fila["cantidad_de_stock"] - 1, frmcpu.CpuDelForm);
+
+                                try
+                                {
+                                    carro += micro;
+                                    this.listBox1.Items.Add(micro.ToString());
+                                    int stock = int.Parse(fila["cantidad_de_stock"].ToString());
+                                    stock--;
+                                    fila["cantidad_de_stock"] = stock;
+                                }
+                                catch (CarritoLlenoException ex)
+                                {
+                                    MessageBox.Show(ex.InformarCarritoLleno());
+                                }
+
+
+                            }
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    throw new SinStockException();
+                }
+            }catch(SinStockException exc)           
             {
-                case "Gabinete":
+                MessageBox.Show(exc.Message);
+            }                        
+        }
 
-                    FrmGabinete frmgabo = new FrmGabinete();
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool todoOK = Ticketeadora<Producto>.ImprimirTicket(this.carro);
+
+                if (todoOK)
+                {
                     
-                    frmgabo.StartPosition = FormStartPosition.CenterScreen;
 
-                    if (frmgabo.ShowDialog() == DialogResult.OK)
+                    this.da.Update(this.dt);
+                    
+                    MessageBox.Show("La venta se realizo correctamente, visualizara su ticket arriba.");
+                    string path = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"\tickets.log";
+                    string texto;
+                    StreamReader f = new StreamReader(path);
+
+                    texto = f.ReadToEnd();
+
+                    this.textBox1.Text = texto;
+
+                    for (int i = 0; i < carro.Productos.Count +1 ; i++)
                     {
-                                              
-                        gabo = new Gabinete("Gabinete", fila["marca"].ToString(), fila["modelo"].ToString(),(float)fila["precio"] ,(int)fila["cantidad_de_stock"], frmgabo.GabineteDelForm);
-
-                        try
-                        {
-                            carro += gabo;
-                        }
-                        catch (CarritoLlenoException ex)
-                        {
-                            MessageBox.Show(ex.InformarCarritoLleno());
-                        }
-                        
-                    }
-                    break;
-
-                case "PlacaDeVideo":
-
-                    FrmPlacaDeVideo frmgpu = new FrmPlacaDeVideo();
-
-                    frmgpu.StartPosition = FormStartPosition.CenterScreen;
-
-                    if(frmgpu.ShowDialog() == DialogResult.OK)
-                    {
-                        gpu = new PlacaDeVideo("Placa de video", fila["marca"].ToString(), fila["modelo"].ToString(), (float)fila["precio"], (int)fila["cantidad_de_stock"], frmgpu.GpuDelForm);
-
-                        try
-                        {
-                            carro += gpu;
-                        }
-                        catch (CarritoLlenoException ex)
-                        {
-                            MessageBox.Show(ex.InformarCarritoLleno());
-                        }                        
-                    }
-                    break;
-
-                case "Procesador":
-
-                    FrmProcesador frmcpu = new FrmProcesador();
-
-                    frmcpu.StartPosition = FormStartPosition.CenterScreen;
-
-                    if (frmcpu.ShowDialog() == DialogResult.OK)
-                    {
-                        micro = new Procesador("Procesador", fila["marca"].ToString(), fila["modelo"].ToString(), (float)fila["precio"], (int)fila["cantidad_de_stock"], frmcpu.CpuDelForm);
-
-                        try
-                        {
-                            carro += micro;
-                        }
-                        catch (CarritoLlenoException ex)
-                        {
-                            MessageBox.Show(ex.InformarCarritoLleno());
-                        }
-
+                        this.listBox1.Items.RemoveAt(0);
                         
                     }
 
-                    break;
+                    carro.Productos.RemoveRange(0, carro.Productos.Count);
 
-                default:
-                    break;
+                    this.t = new Thread(new ThreadStart(this.MensajeThread));
+
+                    this.t.Start();
+                    this.t.Abort();
+
+                }
+
+            }catch(Exception exc)
+            {
+                Console.WriteLine(exc.Message);
             }
-
-            MessageBox.Show(carro.Productos.Count.ToString());
         }
 
 
@@ -209,6 +276,17 @@ namespace FrmPrincipal
             {
                 Console.WriteLine(ex.Message);
             }
-        }        
+        }
+
+        private void carro_EventoPrecio(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pasaste el precio minimo, podes pagar en cuotas!!");
+        }
+
+        private void MensajeThread()
+        {
+            MessageBox.Show("Gracias por comprar en nuestra tienda!!!");
+        }
+
     }
 }

@@ -34,9 +34,9 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Producto: Gabinete");
+            sb.AppendLine(" Producto: Gabinete");
             sb.Append(base.ProductoToString());
-            sb.AppendFormat($"\nCantidad de Ventiladores: {this.CantidadDeVentiladores}\n");
+            sb.AppendFormat($"\n Cantidad de Ventiladores: {this.CantidadDeVentiladores}\n");
 
             return sb.ToString();
         }

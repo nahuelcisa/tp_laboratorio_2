@@ -28,9 +28,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Producto: Placa de video");
+            sb.AppendLine(" Producto: Placa de video");
             sb.Append(base.ProductoToString());
-            sb.AppendFormat($"Longitud: {this.Longitud}cm\n");
+            sb.AppendFormat($" Longitud: {this.Longitud}cm\n");
 
             return sb.ToString();
         }
