@@ -25,6 +25,11 @@ namespace FrmPrincipal
         private PlacaDeVideo gpu;
         private Thread t;
         private Carrito<Producto> carro;
+
+        /// <summary>
+        /// Constructor por default del frm, inicializa la conexion con la base de datos, configura el data adapter
+        /// configura el data table, lo carga, instancia el carrito y tambien instancia el hilo secundario
+        /// </summary>
         public FrmComprador()
         {
             InitializeComponent();
@@ -48,7 +53,11 @@ namespace FrmPrincipal
             this.t = new Thread(new ThreadStart(this.MensajeThread));
         }
 
-
+        /// <summary>
+        /// Selecciona el producto el cual se agrega en el carrito, al estar lleno el carrito lanza la excepcion.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int i = this.dataGridView1.SelectedRows[0].Index;
@@ -156,6 +165,11 @@ namespace FrmPrincipal
             }                        
         }
 
+        /// <summary>
+        /// te vacia el carrito, imprime el ticket que se cuarda en documentos y tambien se muestra en , actualiza la cantidad de stock actual, y vacia el listbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnComprar_Click(object sender, EventArgs e)
         {
             try
@@ -197,22 +211,37 @@ namespace FrmPrincipal
             }
             
         }
-
+        /// <summary>
+        /// inicializa el hilo secundario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmComprador_FormClosing(object sender, FormClosingEventArgs e)
         {
             
 
             this.t.Start();
+            
 
-           
         }
-
+        /// <summary>
+        /// mata el hilo secundario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmComprador_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //this.t.Abort();
+            if (this.t.IsAlive)
+            {
+            this.t.Abort();
+                    
+            }
         }
 
-
+        /// <summary>
+        /// configura todo el data adapter
+        /// </summary>
+        /// <returns>true si lo pudo configurar, false si no</returns>
         protected bool ConfigurarDataAdapter()
         {
             bool rta = false;
@@ -253,7 +282,9 @@ namespace FrmPrincipal
 
             return rta;
         }
-
+        /// <summary>
+        /// configura todo el data table.
+        /// </summary>
         protected void ConfigurarDataTable()
         {
             try
@@ -279,7 +310,9 @@ namespace FrmPrincipal
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// tira el fill en la grilla par allenarla y cargarla con los datos.
+        /// </summary>
         protected void CargarData()
         {
             try
@@ -293,12 +326,18 @@ namespace FrmPrincipal
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// es el manejador del evento precio, el cual se lanza una vez pasado el precio de 500.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void carro_EventoPrecio(object sender, EventArgs e)
         {
             MessageBox.Show("Pasaste el precio minimo, podes pagar en cuotas!!");
         }
-
+        /// <summary>
+        /// es el mensaje que se larga en le hilo secundario al cerrar el form.
+        /// </summary>
         private void MensajeThread()
         {
             MessageBox.Show("Gracias por comprar en nuestra tienda!!!");

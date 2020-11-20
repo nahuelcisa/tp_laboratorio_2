@@ -16,6 +16,9 @@ namespace FrmPrincipal
 
         private Procesador cpu;
 
+        /// <summary>
+        /// propiedad de lectura que devuelve la cantidad de ventiladores que tiene el PlacaDeVideo del form, usando la propiedad de la clase PlacaDeVideo.
+        /// </summary>
         public int CpuDelForm
         {
             get { return cpu.Generacion; }
@@ -24,8 +27,12 @@ namespace FrmPrincipal
         public FrmProcesador()
         {
             InitializeComponent();
-        }      
-
+        }
+        /// <summary>
+        /// instancia una nuevo Procesador, usando la data de la tabla, pero agregandole la generacion que el usuario quiera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text != "")

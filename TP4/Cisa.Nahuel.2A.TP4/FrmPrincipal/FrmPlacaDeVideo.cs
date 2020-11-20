@@ -15,7 +15,9 @@ namespace FrmPrincipal
     {
 
         private PlacaDeVideo gpu;
-
+        /// <summary>
+        /// propiedad de lectura que devuelve la cantidad de ventiladores que tiene el PlacaDeVideo del form, usando la propiedad de la clase PlacaDeVideo.
+        /// </summary>
         public int GpuDelForm
         {
             get { return gpu.Longitud; }
@@ -24,8 +26,13 @@ namespace FrmPrincipal
         public FrmPlacaDeVideo()
         {
             InitializeComponent();
-        }       
+        }
 
+        /// <summary>
+        /// instancia una nuevo PlacaDeVideo, usando la data de la tabla, pero agregandole la longitud que el usuario quiera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click_1(object sender, EventArgs e)
         {
             if (comboBox1.Text != "")

@@ -20,6 +20,11 @@ namespace FrmPrincipal
         private SqlDataAdapter da;
         private DataTable dt;
         private Gabinete gab;
+
+        /// <summary>
+        /// Constructor por defecto del frm, configura la conexion a la bbdd, el data adapter , data table y lo carga con la informacion.
+        /// tambien instancia un gabinete el cual se usa para serializarlo a xml.
+        /// </summary>
         public FrmVendedor()
         {
             InitializeComponent();
@@ -40,7 +45,11 @@ namespace FrmPrincipal
 
         }
             
-
+        /// <summary>
+        /// crea una instancia de frmAdd para agregar un producto a la grilla y a la base de datos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmAdd frm = new FrmAdd();
@@ -60,11 +69,21 @@ namespace FrmPrincipal
                 this.dt.Rows.Add(fila);               
             }
         }
+
+        /// <summary>
+        /// cierra el frm.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// pregunta si esta seguro que quiere salir, a su vez, actualiza la base de datos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmVendedor_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Seguro de querer salir?", "Salir",
@@ -75,6 +94,10 @@ namespace FrmPrincipal
             this.ActualizarData();
         }
 
+        /// <summary>
+        /// configura todas las conexiones entre la base de datos y el data adapter
+        /// </summary>
+        /// <returns></returns>
         protected bool ConfigurarDataAdapter()
         {
             bool rta = false;
@@ -115,7 +138,9 @@ namespace FrmPrincipal
 
             return rta;
         }
-
+        /// <summary>
+        /// configura todas las columnas del data table.
+        /// </summary>
         protected void ConfigurarDataTable()
         {
             try
@@ -141,7 +166,9 @@ namespace FrmPrincipal
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// hace el fill en el data adapter para cargar la grilla.
+        /// </summary>
         protected void CargarData()
         {
             try
@@ -155,7 +182,9 @@ namespace FrmPrincipal
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// sincroniza el data table con el data adapter y la base de datos.
+        /// </summary>
         protected void ActualizarData()
         {
             try
@@ -169,7 +198,11 @@ namespace FrmPrincipal
                 MessageBox.Show("No se ha sincronizado!!!\n" + ex.Message);
             }
         }
-
+        /// <summary>
+        /// serializa un gabinete hardcodeado y lo crea en el escritorio, lo deserializa y lo lee.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSerializer_Click(object sender, EventArgs e)
         {
             Gabinete aux = null;

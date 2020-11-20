@@ -17,7 +17,11 @@ namespace FrmPrincipal
         {
             InitializeComponent();            
         }
-
+        /// <summary>
+        /// evento closing, pregunta a la hora de tocar el boton cerrar si desea cerrar 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Seguro de querer salir?", "Salir",
@@ -26,7 +30,11 @@ namespace FrmPrincipal
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// instancia y muestra el frm vendedor.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVendedor_Click(object sender, EventArgs e)
         {
                        
@@ -35,14 +43,22 @@ namespace FrmPrincipal
             frm.ShowDialog();
 
         }
-
+        /// <summary>
+        /// instancia y muestra el frm comprador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnComprador_Click(object sender, EventArgs e)
         {
             FrmComprador frm = new FrmComprador();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
-
+        /// <summary>
+        /// cierra el frm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();

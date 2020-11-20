@@ -15,7 +15,9 @@ namespace FrmPrincipal
     {
 
         private Gabinete gabinete;
-
+        /// <summary>
+        /// propiedad de lectura que devuelve la cantidad de ventiladores que tiene el gabinete del form, usando la propiedad de la clase gabinete.
+        /// </summary>
         public int GabineteDelForm
         {
             get { return gabinete.CantidadDeVentiladores; }
@@ -26,7 +28,11 @@ namespace FrmPrincipal
             InitializeComponent();
         }
 
-        
+        /// <summary>
+        /// instancia un nuevo gabinete, usando la data de la tabla, pero agregandole la cantidad de ventiladores que el usuario quiera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (this.comboBox1.Text != "")

@@ -32,10 +32,10 @@ namespace FrmPrincipal
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnComprar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,14 +66,6 @@ namespace FrmPrincipal
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(725, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 204);
-            this.textBox1.TabIndex = 4;
-            // 
             // btnComprar
             // 
             this.btnComprar.Location = new System.Drawing.Point(852, 419);
@@ -103,6 +95,14 @@ namespace FrmPrincipal
             this.label2.TabIndex = 7;
             this.label2.Text = "Ticket";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(725, 35);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(239, 204);
+            this.textBox1.TabIndex = 4;
+            // 
             // FrmComprador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,7 +117,7 @@ namespace FrmPrincipal
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmComprador";
             this.Text = "FrmComprador";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComprador_FormClosing);            
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComprador_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,9 +129,9 @@ namespace FrmPrincipal
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

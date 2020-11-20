@@ -16,7 +16,9 @@ namespace FrmPrincipal
 
         private Producto producto;
 
-
+        /// <summary>
+        /// propiedad que devuelve el producto que se crea en el form para agregarlo.
+        /// </summary>
         public Producto ProductoDelForm
         {
             get { return producto; }
@@ -26,7 +28,10 @@ namespace FrmPrincipal
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// constructor parametrizado, carga el texbox con lo que le llegue del producto.
+        /// </summary>
+        /// <param name="p"></param>
         public FrmAdd(Producto p) : this()
         {
             this.producto = p;
@@ -36,14 +41,22 @@ namespace FrmPrincipal
             this.txtPrecio.Text = this.producto.Precio.ToString();
             this.txtCantidad.Text = this.producto.CantidadDeStock.ToString();
         }
-
+        /// <summary>
+        /// instancia el objeto producto.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Aceptar_Click(object sender, EventArgs e)
         {
             this.producto = new Producto(this.txtProducto.Text, this.txtMarca.Text, this.txtModelo.Text, int.Parse(this.txtPrecio.Text), int.Parse(this.txtCantidad.Text));
 
             this.DialogResult = DialogResult.OK;
         }
-
+        /// <summary>
+        /// cierra el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

@@ -5,3 +5,10 @@ C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.dll
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.pdb
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.pdb
