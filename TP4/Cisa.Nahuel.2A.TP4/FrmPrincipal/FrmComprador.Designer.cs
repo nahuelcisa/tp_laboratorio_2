@@ -117,6 +117,7 @@ namespace FrmPrincipal
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmComprador";
             this.Text = "FrmComprador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComprador_FormClosing);            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

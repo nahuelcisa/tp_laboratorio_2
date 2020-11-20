@@ -4,3 +4,4 @@ C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.csp
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.dll
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.pdb
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Entidades\bin\Debug\Entidades.dll.config

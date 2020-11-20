@@ -9,6 +9,12 @@ namespace Entidades
 {
     public static class Ticketeadora<T> where T : Producto
     {
+
+        /// <summary>
+        /// Realiza el ticket de la compra
+        /// </summary>
+        /// <param name="car">carrito el cual se quiere hacer el ticket</param>
+        /// <returns>true si pudo crear el ticket, false si no pudo</returns>
         public static bool ImprimirTicket(Carrito<T> car)
         {
             bool rta = true;

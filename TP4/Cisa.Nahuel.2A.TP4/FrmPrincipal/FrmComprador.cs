@@ -44,6 +44,8 @@ namespace FrmPrincipal
             carro = new Carrito<Producto>(3);
 
             this.carro.PrecioSuperado += carro_EventoPrecio;
+
+            this.t = new Thread(new ThreadStart(this.MensajeThread));
         }
 
 
@@ -173,20 +175,19 @@ namespace FrmPrincipal
 
                     texto = f.ReadToEnd();
 
+                    f.Close();
+
                     this.textBox1.Text = texto;
 
-                    for (int i = 0; i < carro.Productos.Count +1 ; i++)
+                    for (int i = 0; i < this.listBox1.Items.Count; i++)
                     {
                         this.listBox1.Items.RemoveAt(0);
-                        
+
                     }
 
                     carro.Productos.RemoveRange(0, carro.Productos.Count);
-
-                    this.t = new Thread(new ThreadStart(this.MensajeThread));
-
-                    this.t.Start();
-                    this.t.Abort();
+                    
+                    
 
                 }
 
@@ -194,6 +195,21 @@ namespace FrmPrincipal
             {
                 Console.WriteLine(exc.Message);
             }
+            
+        }
+
+        private void FrmComprador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+
+            this.t.Start();
+
+           
+        }
+
+        private void FrmComprador_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.t.Abort();
         }
 
 
@@ -288,5 +304,6 @@ namespace FrmPrincipal
             MessageBox.Show("Gracias por comprar en nuestra tienda!!!");
         }
 
+        
     }
 }

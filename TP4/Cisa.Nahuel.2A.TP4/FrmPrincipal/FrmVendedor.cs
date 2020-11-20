@@ -19,6 +19,7 @@ namespace FrmPrincipal
         private SqlConnection cn;
         private SqlDataAdapter da;
         private DataTable dt;
+        private Gabinete gab;
         public FrmVendedor()
         {
             InitializeComponent();
@@ -34,6 +35,8 @@ namespace FrmPrincipal
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             this.CargarData();
+
+            gab = new Gabinete("Gabinete", "Sentey", "A50", 56, 4, 5);
 
         }
             
@@ -54,9 +57,7 @@ namespace FrmPrincipal
                 fila["precio"] = frm.ProductoDelForm.Precio;
                 fila["cantidad_de_stock"] = frm.ProductoDelForm.CantidadDeStock;
 
-                this.dt.Rows.Add(fila);
-
-                this.ActualizarData();
+                this.dt.Rows.Add(fila);               
             }
         }
         private void Cerrar_Click(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace FrmPrincipal
             {
                 e.Cancel = true;
             }
+            this.ActualizarData();
         }
 
         protected bool ConfigurarDataAdapter()
@@ -165,6 +167,32 @@ namespace FrmPrincipal
             catch (Exception ex)
             {
                 MessageBox.Show("No se ha sincronizado!!!\n" + ex.Message);
+            }
+        }
+
+        private void btnSerializer_Click(object sender, EventArgs e)
+        {
+            Gabinete aux = null;
+            
+
+            if (this.gab.Xml())
+            {
+                MessageBox.Show("Gabinete serializado OK");
+            }
+            else
+            {
+                MessageBox.Show("Gabinete NO serializado");
+            }
+
+            if (((IDeserializa)this.gab).Xml(out aux))
+            {
+                MessageBox.Show("Gabinete deserializado OK");
+
+                MessageBox.Show(aux.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Gabinete NO deserializado");
             }
         }
     }
