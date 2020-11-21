@@ -174,6 +174,9 @@ namespace FrmPrincipal
         {
             try
             {
+                if (carro.Productos.Count == 0) {
+                    throw new Exception("El carro no puede estar vacio.");
+                }
                 bool todoOK = Ticketeadora<Producto>.ImprimirTicket(this.carro);
 
                 if (todoOK)
@@ -192,14 +195,11 @@ namespace FrmPrincipal
                     f.Close();
 
                     this.textBox1.Text = texto;
+                   
+                    this.listBox1.Items.Clear();
 
-                    for (int i = 0; i < this.listBox1.Items.Count; i++)
-                    {
-                        this.listBox1.Items.RemoveAt(0);
 
-                    }
-
-                    carro.Productos.RemoveRange(0, carro.Productos.Count);
+                    carro.Productos.Clear();
                     
                     
 
@@ -207,7 +207,7 @@ namespace FrmPrincipal
 
             }catch(Exception exc)
             {
-                Console.WriteLine(exc.Message);
+                MessageBox.Show(exc.Message);
             }
             
         }

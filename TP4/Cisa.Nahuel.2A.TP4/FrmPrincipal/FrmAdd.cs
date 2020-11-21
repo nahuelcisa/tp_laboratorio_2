@@ -48,7 +48,7 @@ namespace FrmPrincipal
         /// <param name="e"></param>
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            this.producto = new Producto(this.txtProducto.Text, this.txtMarca.Text, this.txtModelo.Text, int.Parse(this.txtPrecio.Text), int.Parse(this.txtCantidad.Text));
+            this.producto = new Producto(this.txtProducto.Text, this.txtMarca.Text, this.txtModelo.Text, float.Parse(this.txtPrecio.Text), int.Parse(this.txtCantidad.Text));
 
             this.DialogResult = DialogResult.OK;
         }
