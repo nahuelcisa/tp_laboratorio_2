@@ -65,6 +65,7 @@ namespace FrmPrincipal
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Snow;
             this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
             this.btnCerrar.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -73,7 +74,7 @@ namespace FrmPrincipal
             this.btnCerrar.Size = new System.Drawing.Size(120, 53);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmPrincipal

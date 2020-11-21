@@ -16,10 +16,16 @@ namespace FrmPrincipal
     public partial class FrmVendedor : Form
     {
 
+        #region Atributos
+
         private SqlConnection cn;
         private SqlDataAdapter da;
         private DataTable dt;
         private Gabinete gab;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Constructor por defecto del frm, configura la conexion a la bbdd, el data adapter , data table y lo carga con la informacion.
@@ -33,18 +39,18 @@ namespace FrmPrincipal
 
             this.ConfigurarDataAdapter();
             this.ConfigurarDataTable();
-           
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            this.ConfigurarGrilla();
 
             this.CargarData();
 
             gab = new Gabinete("Gabinete", "Sentey", "A50", 56, 4, 5);
 
         }
-            
+
+        #endregion
+
+        #region botones
         /// <summary>
         /// crea una instancia de frmAdd para agregar un producto a la grilla y a la base de datos.
         /// </summary>
@@ -71,6 +77,37 @@ namespace FrmPrincipal
         }
 
         /// <summary>
+        /// serializa un gabinete hardcodeado y lo crea en el escritorio, lo deserializa y lo lee.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSerializer_Click(object sender, EventArgs e)
+        {
+            Gabinete aux = null;
+
+
+            if (this.gab.Xml())
+            {
+                MessageBox.Show("Gabinete serializado OK");
+            }
+            else
+            {
+                MessageBox.Show("Gabinete NO serializado");
+            }
+
+            if (((IDeserializa)this.gab).Xml(out aux))
+            {
+                MessageBox.Show("Gabinete deserializado OK");
+
+                MessageBox.Show(aux.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Gabinete NO deserializado");
+            }
+        }
+
+        /// <summary>
         /// cierra el frm.
         /// </summary>
         /// <param name="sender"></param>
@@ -79,6 +116,11 @@ namespace FrmPrincipal
         {
             this.Close();
         }
+
+        #endregion
+
+        #region Metodos
+
         /// <summary>
         /// pregunta si esta seguro que quiere salir, a su vez, actualiza la base de datos.
         /// </summary>
@@ -175,7 +217,7 @@ namespace FrmPrincipal
             {
                 this.da.Fill(this.dt);
 
-                this.dataGridView1.DataSource = this.dt;
+                this.dgvGrilla.DataSource = this.dt;
             }
             catch (Exception ex)
             {
@@ -198,35 +240,52 @@ namespace FrmPrincipal
                 MessageBox.Show("No se ha sincronizado!!!\n" + ex.Message);
             }
         }
-        /// <summary>
-        /// serializa un gabinete hardcodeado y lo crea en el escritorio, lo deserializa y lo lee.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSerializer_Click(object sender, EventArgs e)
+        
+
+        private void ConfigurarGrilla()
         {
-            Gabinete aux = null;
-            
+            // Coloco color de fondo para las filas
+            this.dgvGrilla.RowsDefaultCellStyle.BackColor = Color.Wheat;
 
-            if (this.gab.Xml())
-            {
-                MessageBox.Show("Gabinete serializado OK");
-            }
-            else
-            {
-                MessageBox.Show("Gabinete NO serializado");
-            }
+            // Alterno colores
+            this.dgvGrilla.AlternatingRowsDefaultCellStyle.BackColor = Color.BurlyWood;
 
-            if (((IDeserializa)this.gab).Xml(out aux))
-            {
-                MessageBox.Show("Gabinete deserializado OK");
+            // Pongo color de fondo a la grilla
+            this.dgvGrilla.BackgroundColor = Color.Beige;
 
-                MessageBox.Show(aux.ToString());
-            }
-            else
-            {
-                MessageBox.Show("Gabinete NO deserializado");
-            }
+            // Defino fuente para el encabezado y alineación del encabezado
+            this.dgvGrilla.ColumnHeadersDefaultCellStyle.Font = new Font(dgvGrilla.Font, FontStyle.Bold);
+            this.dgvGrilla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Defino el color de las lineas de separación
+            this.dgvGrilla.GridColor = Color.HotPink;
+
+            // La grilla será de sólo lectura
+            this.dgvGrilla.ReadOnly = false;
+
+            // No permito la multiselección
+            this.dgvGrilla.MultiSelect = false;
+
+            // Selecciono toda la fila a la vez
+            this.dgvGrilla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Hago que las columnas ocupen todo el ancho del 'DataGrid'
+            this.dgvGrilla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Indico el color de la fila seleccionada
+            this.dgvGrilla.RowsDefaultCellStyle.SelectionBackColor = Color.DarkOliveGreen;
+            this.dgvGrilla.RowsDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+
+            // No permito modificar desde la grilla
+            this.dgvGrilla.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            // Saco los encabezados de las filas
+            this.dgvGrilla.RowHeadersVisible = false;
+
+            this.dgvGrilla.AllowUserToAddRows = false;
+
         }
+
+        #endregion
     }
 }

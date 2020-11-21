@@ -59,28 +59,31 @@ namespace FrmPrincipal
             // 
             // btnAccept
             // 
+            this.btnAccept.BackColor = System.Drawing.Color.Snow;
             this.btnAccept.Location = new System.Drawing.Point(51, 166);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 6;
             this.btnAccept.Text = "Aceptar";
-            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click_1);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.Snow;
             this.btnCancel.Location = new System.Drawing.Point(155, 166);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmPlacaDeVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(270, 196);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);

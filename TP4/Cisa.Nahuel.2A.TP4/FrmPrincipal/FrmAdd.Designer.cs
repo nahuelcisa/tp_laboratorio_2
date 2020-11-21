@@ -46,9 +46,10 @@ namespace FrmPrincipal
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 79);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Marca:";
             // 
@@ -62,9 +63,10 @@ namespace FrmPrincipal
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 129);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Modelo: ";
             // 
@@ -78,18 +80,20 @@ namespace FrmPrincipal
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 26);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Producto:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 185);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Precio:";
             // 
@@ -110,30 +114,33 @@ namespace FrmPrincipal
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 239);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 232);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(137, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Cantidad de stock";
             // 
             // Aceptar
             // 
+            this.Aceptar.BackColor = System.Drawing.Color.Snow;
             this.Aceptar.Location = new System.Drawing.Point(28, 298);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(75, 23);
             this.Aceptar.TabIndex = 10;
             this.Aceptar.Text = "Aceptar";
-            this.Aceptar.UseVisualStyleBackColor = true;
+            this.Aceptar.UseVisualStyleBackColor = false;
             this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Cancelar
             // 
+            this.Cancelar.BackColor = System.Drawing.Color.Snow;
             this.Cancelar.Location = new System.Drawing.Point(172, 298);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 11;
             this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // txtProducto
@@ -154,6 +161,7 @@ namespace FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(288, 333);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.Cancelar);

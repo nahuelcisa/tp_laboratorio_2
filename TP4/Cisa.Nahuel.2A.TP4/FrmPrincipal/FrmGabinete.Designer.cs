@@ -52,22 +52,24 @@ namespace FrmPrincipal
             // 
             // btnAccept
             // 
+            this.btnAccept.BackColor = System.Drawing.Color.Snow;
             this.btnAccept.Location = new System.Drawing.Point(30, 124);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 1;
             this.btnAccept.Text = "Aceptar";
-            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.Snow;
             this.btnCancel.Location = new System.Drawing.Point(134, 124);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
@@ -83,6 +85,7 @@ namespace FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(246, 154);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);

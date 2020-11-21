@@ -16,6 +16,7 @@ namespace FrmPrincipal
 {
     public partial class FrmComprador : Form
     {
+        #region atributos
 
         private SqlConnection cn;
         private SqlDataAdapter da;
@@ -25,7 +26,9 @@ namespace FrmPrincipal
         private PlacaDeVideo gpu;
         private Thread t;
         private Carrito<Producto> carro;
+        #endregion
 
+        #region constructor
         /// <summary>
         /// Constructor por default del frm, inicializa la conexion con la base de datos, configura el data adapter
         /// configura el data table, lo carga, instancia el carrito y tambien instancia el hilo secundario
@@ -39,10 +42,8 @@ namespace FrmPrincipal
             this.ConfigurarDataAdapter();
             this.ConfigurarDataTable();
 
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            this.ConfigurarGrilla();
 
             this.CargarData();
 
@@ -53,6 +54,10 @@ namespace FrmPrincipal
             this.t = new Thread(new ThreadStart(this.MensajeThread));
         }
 
+        #endregion
+
+        #region botones
+
         /// <summary>
         /// Selecciona el producto el cual se agrega en el carrito, al estar lleno el carrito lanza la excepcion.
         /// </summary>
@@ -60,7 +65,7 @@ namespace FrmPrincipal
         /// <param name="e"></param>
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            int i = this.dataGridView1.SelectedRows[0].Index;
+            int i = this.dgvGrilla.SelectedRows[0].Index;
 
             DataRow fila = this.dt.Rows[i];
 
@@ -211,30 +216,38 @@ namespace FrmPrincipal
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region metodos
+
+
         /// <summary>
         /// inicializa el hilo secundario.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FrmComprador_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-
-            this.t.Start();
-            
-
+        {          
+            this.t.Start();           
         }
         /// <summary>
         /// mata el hilo secundario.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmComprador_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmComprador_FormClosed_1(object sender, FormClosedEventArgs e)
         {
             if (this.t.IsAlive)
             {
-            this.t.Abort();
-                    
+                Thread.Sleep(50);
+                this.t.Abort();
+
             }
         }
 
@@ -319,7 +332,7 @@ namespace FrmPrincipal
             {
                 this.da.Fill(this.dt);
 
-                this.dataGridView1.DataSource = this.dt;
+                this.dgvGrilla.DataSource = this.dt;
             }
             catch (Exception ex)
             {
@@ -343,6 +356,50 @@ namespace FrmPrincipal
             MessageBox.Show("Gracias por comprar en nuestra tienda!!!");
         }
 
-        
+        private void ConfigurarGrilla()
+        {
+            // Coloco color de fondo para las filas
+            this.dgvGrilla.RowsDefaultCellStyle.BackColor = Color.Wheat;
+
+            // Alterno colores
+            this.dgvGrilla.AlternatingRowsDefaultCellStyle.BackColor = Color.BurlyWood;
+
+            // Pongo color de fondo a la grilla
+            this.dgvGrilla.BackgroundColor = Color.Beige;
+
+            // Defino fuente para el encabezado y alineación del encabezado
+            this.dgvGrilla.ColumnHeadersDefaultCellStyle.Font = new Font(dgvGrilla.Font, FontStyle.Bold);
+            this.dgvGrilla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Defino el color de las lineas de separación
+            this.dgvGrilla.GridColor = Color.HotPink;
+
+            // La grilla será de sólo lectura
+            this.dgvGrilla.ReadOnly = false;
+
+            // No permito la multiselección
+            this.dgvGrilla.MultiSelect = false;
+
+            // Selecciono toda la fila a la vez
+            this.dgvGrilla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Hago que las columnas ocupen todo el ancho del 'DataGrid'
+            this.dgvGrilla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Indico el color de la fila seleccionada
+            this.dgvGrilla.RowsDefaultCellStyle.SelectionBackColor = Color.DarkOliveGreen;
+            this.dgvGrilla.RowsDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+
+            // No permito modificar desde la grilla
+            this.dgvGrilla.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            // Saco los encabezados de las filas
+            this.dgvGrilla.RowHeadersVisible = false;
+
+            this.dgvGrilla.AllowUserToAddRows = false;
+
+        }
+
+            #endregion
     }
 }
