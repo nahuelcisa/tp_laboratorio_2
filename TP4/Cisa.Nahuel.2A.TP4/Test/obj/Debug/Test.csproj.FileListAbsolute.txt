@@ -9,3 +9,14 @@ C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.csproj.CopyCo
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.exe
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.pdb
 C:\Users\zNahue\Desktop\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Entidades.dll.config
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Test.exe.config
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Test.exe
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Test.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Entidades.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Entidades.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\bin\Debug\Entidades.dll.config
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.exe
+C:\Users\zNahue\Desktop\tp_laboratorio_2\TP4\Cisa.Nahuel.2A.TP4\Test\obj\Debug\Test.pdb
