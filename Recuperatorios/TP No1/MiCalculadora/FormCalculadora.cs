@@ -17,6 +17,7 @@ namespace MiCalculadora
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Limpia la consola mediante el metodo limpiar.
         /// </summary>
@@ -49,6 +50,7 @@ namespace MiCalculadora
         {
             this.lblResultado.Text = Numero.BinarioDecimal(this.lblResultado.Text);
         }
+
         /// <summary>
         /// convierte el resultado a binario
         /// </summary>
@@ -58,6 +60,7 @@ namespace MiCalculadora
         {
             this.lblResultado.Text = Numero.DecimalBinario(this.lblResultado.Text);
         }
+
         /// <summary>
         /// cierra el form
         /// </summary>
@@ -68,6 +71,7 @@ namespace MiCalculadora
             
             this.Close();
         }
+
         /// <summary>
         /// limpia el resultado, combobox y texboxs del form
         /// </summary>
@@ -77,6 +81,7 @@ namespace MiCalculadora
         {
             Limpiar();
         }
+
         /// <summary>
         /// realiza la operacion pasada en el combo box, en caso de recibir el MinValue, devolvera error, si no, el resultado de la operacion
         /// </summary>

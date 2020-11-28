@@ -26,8 +26,8 @@ namespace Entidades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ZNAHUE\\SQLEXPRESS;Initial Catalog=Cisa.Nahuel.2A.TP4;Integrated Secur" +
-            "ity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ZNAHUE\\SQLEXPRESS;Initial Catalog=sp_lab_II_utiles;Integrated Securit" +
+            "y=True")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));

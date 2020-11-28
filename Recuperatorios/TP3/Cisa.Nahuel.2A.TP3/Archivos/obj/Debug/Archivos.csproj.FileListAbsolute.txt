@@ -16,3 +16,12 @@ C:\Users\zNahue\Desktop\tp_laboratorio_2\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Deb
 C:\Users\zNahue\Desktop\tp_laboratorio_2\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.csproj.CopyComplete
 C:\Users\zNahue\Desktop\tp_laboratorio_2\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.dll
 C:\Users\zNahue\Desktop\tp_laboratorio_2\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\bin\Debug\Archivos.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\bin\Debug\Archivos.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\bin\Debug\Excepciones.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\bin\Debug\Excepciones.pdb
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.csproj.CopyComplete
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.dll
+C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP3\Cisa.Nahuel.2A.TP3\Archivos\obj\Debug\Archivos.pdb

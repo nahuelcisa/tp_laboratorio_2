@@ -26,6 +26,7 @@ namespace FrmPrincipal
         private PlacaDeVideo gpu;
         private Thread t;
         private Carrito<Producto> carro;
+        private bool flag;
         #endregion
 
         #region constructor
@@ -52,6 +53,7 @@ namespace FrmPrincipal
             this.carro.PrecioSuperado += carro_EventoPrecio;
 
             this.t = new Thread(new ThreadStart(this.MensajeThread));
+            flag = false;
         }
 
         #endregion
@@ -94,6 +96,7 @@ namespace FrmPrincipal
                                     int stock = int.Parse(fila["cantidad_de_stock"].ToString());
                                     stock--;
                                     fila["cantidad_de_stock"] = stock;
+                                    flag = true;
 
                                 }
                                 catch (CarritoLlenoException ex)
@@ -121,6 +124,7 @@ namespace FrmPrincipal
                                     int stock = int.Parse(fila["cantidad_de_stock"].ToString());
                                     stock--;
                                     fila["cantidad_de_stock"] = stock;
+                                    flag = true;
                                 }
                                 catch (CarritoLlenoException ex)
                                 {
@@ -146,6 +150,7 @@ namespace FrmPrincipal
                                     int stock = int.Parse(fila["cantidad_de_stock"].ToString());
                                     stock--;
                                     fila["cantidad_de_stock"] = stock;
+                                    flag = true;
                                 }
                                 catch (CarritoLlenoException ex)
                                 {
@@ -353,7 +358,15 @@ namespace FrmPrincipal
         /// </summary>
         private void MensajeThread()
         {
+            if(flag)
+            {
             MessageBox.Show("Gracias por comprar en nuestra tienda!!!");
+
+            }
+            else
+            {
+                MessageBox.Show("rata no compraste nada!!!");
+            }
         }
 
         private void ConfigurarGrilla()
