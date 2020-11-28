@@ -18,15 +18,16 @@ namespace Entidades
         /// <param name="num2">Numero 2</param>
         /// <param name="operador">Operador, por default es el +</param>
         /// <returns></returns>
-        public static double Operar(Numero num1, Numero num2, string operador)
+        public static double Operar(Numero num1, Numero num2, char operador)
         {
             double retorno = 0;
+            string operadorV;
 
-            operador = ValidarOperador(operador);
+            operadorV = ValidarOperador(operador);
 
             if (num1 != null && num2 != null)
             {
-                switch (operador)
+                switch (operadorV)
                 {
                     case "+":
                         retorno = num1 + num2;
@@ -61,16 +62,16 @@ namespace Entidades
         /// </summary>
         /// <param name="operador">operador en si</param>
         /// <returns>operador en forma de string</returns>
-        private static string ValidarOperador(string operador)
+        private static string ValidarOperador(char operador)
         {
-            string retorno = "+";
+            char retorno = '+';
 
-            if (operador == "+" || operador == "-" || operador == "/" || operador == "*")
+            if (operador == '+' || operador == '-' || operador == '/' || operador == '*')
             {
                 retorno = operador;
             }
             
-            return retorno;
+            return retorno.ToString();
         }
         #endregion
     }

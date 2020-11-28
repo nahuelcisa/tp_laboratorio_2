@@ -35,8 +35,8 @@ namespace MiCalculadora
         /// <param name="e"></param>
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Seguro de querer salir?", "Salir",
-         MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("¿Seguro de querer salir?", "Salir",
+         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {               
                 e.Cancel = true;
             }
@@ -89,10 +89,10 @@ namespace MiCalculadora
         /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            double num = Operar(this.textBox1.Text, this.textBox2.Text, this.cmbOperador.Text);
+            double num = Operar(this.txtNumero1.Text, this.txtNumero2.Text, this.cmbOperador.Text[0]);
             if(num == double.MinValue)
             {
-                this.lblResultado.Text = "Error.";
+                this.lblResultado.Text = "Valor inválido.";
             }
             else
             {
@@ -105,8 +105,8 @@ namespace MiCalculadora
         /// </summary>
         private void Limpiar()
         {
-            this.textBox1.Text = "";
-            this.textBox2.Text = "";
+            this.txtNumero1.Text = "";
+            this.txtNumero2.Text = "";
             this.cmbOperador.Text = "";
             this.lblResultado.Text = "";
         }
@@ -118,7 +118,7 @@ namespace MiCalculadora
         /// <param name="numero2"></param>
         /// <param name="operador"></param>
         /// <returns></returns>
-        private static double Operar(string numero1, string numero2, string operador)
+        private static double Operar(string numero1, string numero2, char operador)
         {
 
             Numero numeroUno = new Numero(numero1);

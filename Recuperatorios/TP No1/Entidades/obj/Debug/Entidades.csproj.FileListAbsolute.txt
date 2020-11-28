@@ -12,7 +12,6 @@ C:\Users\zNahue\Desktop\tp_laboratorio_2\TP No1\Entidades\obj\Debug\Entidades.dl
 C:\Users\zNahue\Desktop\tp_laboratorio_2\TP No1\Entidades\obj\Debug\Entidades.pdb
 C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\bin\Debug\Entidades.dll
 C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\bin\Debug\Entidades.pdb
-C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\obj\Debug\Entidades.dll
 C:\Users\zNahue\Desktop\tp_laboratorio_2\Recuperatorios\TP No1\Entidades\obj\Debug\Entidades.pdb

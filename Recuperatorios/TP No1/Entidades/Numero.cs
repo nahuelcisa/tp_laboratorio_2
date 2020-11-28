@@ -116,7 +116,7 @@ namespace Entidades
         public static string BinarioDecimal(string binario)
         {
             bool aux = true;
-            string retorno = "Error.";
+            string retorno = "Valor inválido..";
 
             foreach (var item in binario)
             {
@@ -142,7 +142,7 @@ namespace Entidades
         /// <returns>Error si no pudo convertirlo, en caso contrario devuelve la conversion</returns>
         public static string DecimalBinario(string numero)
         {
-            string retorno = "Error.";
+            string retorno = "Valor inválido..";
 
             double aux;
 
