@@ -56,10 +56,10 @@
       </Alumnos>
       <Clase>Laboratorio</Clase>
       <Instructor>
-        <Apellido>Lopez</Apellido>
-        <DNI>12224458</DNI>
+        <Apellido>Juarez</Apellido>
+        <DNI>32234456</DNI>
         <Nacionalidad>Argentino</Nacionalidad>
-        <Nombre>Juan</Nombre>
+        <Nombre>Roberto</Nombre>
       </Instructor>
     </Jornada>
     <Jornada>
@@ -79,10 +79,10 @@
       </Alumnos>
       <Clase>Legislacion</Clase>
       <Instructor>
-        <Apellido>Juarez</Apellido>
-        <DNI>32234456</DNI>
+        <Apellido>Lopez</Apellido>
+        <DNI>12224458</DNI>
         <Nacionalidad>Argentino</Nacionalidad>
-        <Nombre>Roberto</Nombre>
+        <Nombre>Juan</Nombre>
       </Instructor>
     </Jornada>
   </Jornadas>
